@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+/* THIS IS GOOD YOVAN */
 
         /* Main body styling with background image and text settings */
         body {
