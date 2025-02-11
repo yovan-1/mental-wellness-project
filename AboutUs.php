@@ -236,7 +236,7 @@
 
     <!-- Main navigation menu -->
     <nav id="mainNav">
-        <a href="Mental22.php">Home</a> |
+        <a href="index.php">Home</a> |
         <a href="AboutUs.php">About Us</a> |
         <a href="SupportForums.php">Support Forums</a> |
         <a href="Contact us.php">Contact Us</a> |
@@ -313,7 +313,7 @@
         <a href="www.twitter.com" style="text-decoration: none; color: #1976D2; margin: 0 15px; transition: color 0.3s;">Twitter</a> |
         <a href="www.facebook.com" style="text-decoration: none; color: #1976D2; margin: 0 15px; transition: color 0.3s;">Facebook</a> |
         <a href="www.Instagram.com" style="text-decoration: none; color: #1976D2; margin: 0 15px; transition: color 0.3s;">Instagram</a>
-        <p style="color: #666;">© 2024 Mental Health Support. All rights reserved.</p>
+        <p style="color: #666;">© 2025 Mental Health Support. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript for mobile navigation toggle -->

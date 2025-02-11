@@ -22,7 +22,7 @@
     <!-- Navigation bar -->
     <!-- Contains links to main site sections with consistent styling -->
     <nav style="margin: 20px 0; background-color: rgba(255, 255, 255, 0.9); padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <a href="Mental22.php" style="text-decoration: none; color: #1976D2; margin: 0 15px; font-weight: 600; transition: color 0.3s;">Home</a> |
+        <a href="index.php" style="text-decoration: none; color: #1976D2; margin: 0 15px; font-weight: 600; transition: color 0.3s;">Home</a> |
         <a href="AboutUs.php" style="text-decoration: none; color: #1976D2; margin: 0 15px; font-weight: 600; transition: color 0.3s;">About Us</a> |
         <a href="SupportForums.php" style="text-decoration: none; color: #1976D2; margin: 0 15px; font-weight: 600; transition: color 0.3s;">Support Forums</a> |
         <a href="Contact us.php" style="text-decoration: none; color: #1976D2; margin: 0 15px; font-weight: 600; transition: color 0.3s;">Contact Us</a> |
@@ -212,7 +212,7 @@
             <a href="#" style="text-decoration: none; color: #1976D2; font-size: 18px; transition: color 0.3s;">Facebook</a>
             <a href="#" style="text-decoration: none; color: #1976D2; font-size: 18px; transition: color 0.3s;">Instagram</a>
         </div>
-        <p style="color: #666;">© 2024 Mental Health Support. All rights reserved.</p>
+        <p style="color: #666;">© 2025 Mental Health Support. All rights reserved.</p>
     </footer>
 
 </body>
