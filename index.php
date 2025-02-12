@@ -1,3 +1,17 @@
+<?php
+// Start the session and handle session initialization before any output
+session_start();
+// Clear session data if user is not logged in 
+if(!isset($_SESSION['logged_in'])) {
+    if(session_status() === PHP_SESSION_ACTIVE) {
+        session_unset();
+        session_destroy();
+    }
+    session_start();
+}
+// Get username from session if it exists
+$username = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box; margin: 0; padding: 0;">
 <head>
@@ -151,18 +165,6 @@
 </head>
 <!-- Rest of the HTML remains the same -->
 <body>
-    <?php 
-    // Start the session and handle session initialization
-    session_start();
-    // Clear session data if user is not logged in
-    if(!isset($_SESSION['logged_in'])) {
-        session_unset();
-        session_destroy();
-        session_start();
-    }
-    // Get username from session if it exists
-    $username = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-    ?>
     <!-- Fixed header with site title -->
     <h1>Welcome to Mental Health Support <br>and Awareness Website</h1>
     <!-- Spacing for fixed header -->
@@ -214,7 +216,7 @@
         <a href="www.twitter.com">Twitter</a> |
         <a href="www.facebook.com">Facebook</a> |
         <a href="www.instagram.com">Instagram</a>
-        <p>© 2024 Mental Health Support. All rights reserved.</p>
+        <p>© 2025 Mental Health Support. All rights reserved.</p>
     </footer>
 
     <script>
