@@ -68,6 +68,70 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         button:hover {
             background: #1B5E20;
         }
+
+        /* Goal Setting Form Container */
+.goal-form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+/* Labels */
+.goal-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.goal-form input[type="text"],
+.goal-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.goal-form input[type="text"]:focus,
+.goal-form select:focus {
+    border-color: #2E7D32;
+    outline: none;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
+}
+
+/* Submit Button */
+.goal-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.goal-form button[type="submit"]:hover {
+    background-color: #1B5E20;
+}
+
+/* Placeholder Text */
+.goal-form input::placeholder {
+    color: #999;
+    font-style: italic;
+}
     </style>
 </head>
 <body>
@@ -100,6 +164,17 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 </div>
                 
                 <button type="submit">Set Goal ✨</button>
+                <div style="margin: 20px;">
+    <label for="goal">Set a Mental Health Goal:</label><br>
+    <input type="text" id="goal" name="goal" placeholder="e.g., Reduce stress" required><br>
+    <label for="timeline">Timeline:</label><br>
+    <select id="timeline" name="timeline" required>
+        <option value="1_week">1 Week</option>
+        <option value="1_month">1 Month</option>
+        <option value="3_months">3 Months</option>
+    </select><br>
+    <button type="submit">Set Goal</button>
+</div>
             </form>
         </div>
 
