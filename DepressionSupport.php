@@ -6,7 +6,7 @@
     <title>Depression Support Forum</title>
 </head>
 <body>
-    <h1>Depression Support Forum</h1>
+<h1>Depression Support Forum</h1>
     <div style="margin: 20px;">
         <p>Was this post helpful?</p>
         <input type="radio" id="helpful1" name="helpful" value="1">
