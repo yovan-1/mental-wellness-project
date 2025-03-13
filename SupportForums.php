@@ -103,6 +103,7 @@
         <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 30px; color: #2E7D32; text-transform: uppercase;">Support Community Forums</h2>
 
         <!-- Forum Categories Grid -->
+         
         <!-- 3-column grid showing different support categories -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px;">
             <!-- Individual forum category cards -->
@@ -125,6 +126,19 @@
                 <button onclick="window.location.href='PSTDSupport.php'" style="background-color: #2E7D32; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Join Discussion</button>
             </div>
         </div>
+
+        <div style="margin: 20px;">
+          <h3>Journaling Feedback Survey</h3>
+          <p>Help us improve by sharing your experience with journaling.</p>
+          <form action="submit_survey.php" method="POST">
+         <label for="experience">How has journaling affected your mental health?</label><br>
+         <textarea id="experience" name="experience" rows="4" cols="50"></textarea><br>
+         <label for="rating">On a scale of 1 to 5, how helpful is journaling?</label><br>
+         <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+         <button type="submit">Submit Survey</button>
+    </form>
+        </div>
+
 
         <!-- Recent Discussions Section -->
         <!-- Lists recent forum topics with activity information -->
