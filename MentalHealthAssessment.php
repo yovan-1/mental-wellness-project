@@ -100,15 +100,27 @@ function calculateScore() {
     document.getElementById('finalScore').value = totalScore;
     
     let resultMessage = "";
-    if (totalScore >= 12) {
-        resultMessage = "You may be experiencing high stress. Consider seeking professional support.";
-    } else if (totalScore >= 6) {
-        resultMessage = "Your stress levels are moderate. Practicing mindfulness may help.";
+    // Calculating Cyclomatic Complexity in Mental Health Assessment
+function assessMentalHealth($score) {
+    $result = "";
+
+    if ($score >= 90) {
+        $result = "Severe Depression";
+    } elseif ($score >= 70) {
+        $result = "Moderate Depression";
+    } elseif ($score >= 50) {
+        $result = "Mild Depression";
+    } elseif ($score >= 30) {
+        $result = "Borderline Case";
+    } elseif ($score >= 10) {
+        $result = "Minimal Depression";
     } else {
-        resultMessage = "Your stress levels seem low. Keep up the good self-care!";
+        $result = "No Depression Detected";
     }
-    document.getElementById('resultMessage').innerText = resultMessage;
+
+    return $result;
 }
+
 </script>
 
 </html/>
