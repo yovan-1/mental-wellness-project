@@ -37,6 +37,11 @@ Only valid inputs are processed, reducing invalid login attempts.
 This prevents users from submitting partial or incorrect data.
  Enhances Security
 
+
+Cyclomatic Complexity Calculation in Mental Health Assessment
+
+Overview
+This module calculates Cyclomatic Complexity by measuring the number of independent paths through a function. The assessMentalHealth() function evaluates a user's mental health score and categorizes the result based on predefined thresholds.
 Helps prevent accidental form submissions with missing fields.
 Can be extended with stronger validation (e.g., regex for email format, password strength checks).
  Benefits of Measurement Validation in Authentication
