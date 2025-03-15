@@ -48,3 +48,15 @@ Can be extended with stronger validation (e.g., regex for email format, password
  Improves user experience by providing instant feedback.
  Reduces server errors by catching invalid inputs before submission.
  Enhances security by ensuring structured and complete login credentials.
+
+
+Added a code for measurement validation in the tools.php page.
+Description
+This code provides a simple HTML form where users can input their stress level on a scale of 1 to 10. It includes basic form validation using JavaScript to ensure users enter a valid number within the specified range.
+
+How It Works
+The form displays a label and an input field where users can enter their stress level.
+The input field is restricted to values between 1 and 10 using the min and max attributes.
+When the user clicks the Submit button:
+A JavaScript function checks whether the entered value is within the allowed range.
+If the value is invalid, an alert message prompts the user to correct it, and the form submission is prevented.
