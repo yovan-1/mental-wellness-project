@@ -63,7 +63,9 @@ If the value is invalid, an alert message prompts the user to correct it, and th
 
 
 
-Structural Measurement
+Software Structural Measurement
+
+This measures complexity in control-flow, data flow, and data structure.
 
 In the code of db.php file i implemented the structural measurement using  a function called `executeQueryWithLogging` that does the following,
 
