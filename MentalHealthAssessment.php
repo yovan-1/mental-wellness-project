@@ -10,4 +10,4 @@
     <p>Take our comprehensive assessment to understand your mental well-being better.</p>
     <!-- Add assessment form or content here -->
 </body>
-</html>
+</html/>
