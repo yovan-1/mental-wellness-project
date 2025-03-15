@@ -1,3 +1,4 @@
+<?php
 $servername = "groupnine-database.c1ymcim2gqjk.eu-north-1.rds.amazonaws.com";  // RDS endpoint
 $username = "admin";  // RDS username
 $password = "group_9123";  // RDS password
@@ -11,3 +12,4 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
+?>
