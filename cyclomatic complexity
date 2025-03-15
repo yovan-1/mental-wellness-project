@@ -1,0 +1,22 @@
+
+php
+Copy
+Edit
+<?php
+// Cyclomatic Complexity Example: Mental Health Assessment
+function assessMentalHealth($score) {
+    if ($score >= 90) {
+        return "Severe Depression";
+    } elseif ($score >= 70) {
+        return "Moderate Depression";
+    } elseif ($score >= 50) {
+        return "Mild Depression";
+    } elseif ($score >= 30) {
+        return "Borderline Case";
+    } elseif ($score >= 10) {
+        return "Minimal Depression";
+    } else {
+        return "No Depression Detected";
+    }
+}
+?>

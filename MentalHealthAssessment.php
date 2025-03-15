@@ -55,6 +55,7 @@ session_start();
         </form>
     </div>
 </body>
+
 </html>
 
 <style>
@@ -109,3 +110,5 @@ function calculateScore() {
     document.getElementById('resultMessage').innerText = resultMessage;
 }
 </script>
+
+</html/>
