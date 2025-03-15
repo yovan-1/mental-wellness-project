@@ -118,6 +118,22 @@
         </div>
     </section>
 
+    <div style="margin: 20px;">
+    <label for="stress">On a scale of 1 to 10, how stressed are you?</label><br>
+    <input type="number" id="stress" name="stress" min="1" max="10" required>
+    <button type="submit">Submit</button>
+</div>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        const stressLevel = document.getElementById('stress').value;
+        if (stressLevel < 1 || stressLevel > 10) {
+            alert('Please enter a valid stress level between 1 and 10.');
+            event.preventDefault();
+        }
+    });
+</script>
+
+
     <!-- Footer section with social links and copyright
          - Semi-transparent white background
          - Rounded top corners
