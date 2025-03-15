@@ -13,3 +13,21 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 ?>
+
+
+<?php
+// Structural Measurement: Log Query Execution Time
+function executeQueryWithLogging($conn, $query) {
+    $startTime = microtime(true);
+    $result = $conn->query($query);
+    $endTime = microtime(true);
+    
+    $executionTime = $endTime - $startTime;
+    error_log("Query executed in: " . $executionTime . " seconds");
+
+    return $result;
+}
+
+// Example Usage:
+executeQueryWithLogging($conn, "SELECT * FROM users");
+?>
