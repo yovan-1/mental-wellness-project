@@ -60,3 +60,18 @@ The input field is restricted to values between 1 and 10 using the min and max a
 When the user clicks the Submit button:
 A JavaScript function checks whether the entered value is within the allowed range.
 If the value is invalid, an alert message prompts the user to correct it, and the form submission is prevented.
+
+
+
+Structural Measurement
+
+In the code of db.php file i implemented the structural measurement using  a function called `executeQueryWithLogging` that does the following,
+
+1. Measures the execution time of SQL queries made to the database.
+2. Logs the execution time using the `error_log` function.
+
+In our Mental Health and Wellness Project this code i have implemented does the folkowing changes,
+
+1. Monitoring database performance: By logging query execution times, you can identify slow-running queries that may impact user experience.
+2. Optimizing database queries:This is achieved by analyzing logged execution times, you can optimize database queries to improve response times and overall application performance.
+3. Ensuring data-driven insights: By optimizing database query performance, you can ensure that your application provides accurate and timely insights to support mental health and wellness.
