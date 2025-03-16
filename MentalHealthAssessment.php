@@ -2,125 +2,82 @@
 // Start the session
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Assessment</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS for styling -->
-    <script defer src="assessment.js"></script> <!-- External JavaScript for logic -->
+    
+    <script>
+        // METROLOGY CONCEPT: Tracking User Engagement (Time Spent on Page)
+        let startTime = Date.now(); // Capture the time when the user lands on the page
+
+        // When the user leaves the page, calculate the time spent
+        window.addEventListener("beforeunload", function () {
+            let timeSpent = Math.round((Date.now() - startTime) / 1000); // Convert to seconds
+            console.log("User spent " + timeSpent + " seconds on the page.");
+            sendEngagementData(timeSpent); // Send data to the server for analysis
+        });
+
+        // Function to send engagement data to the backend
+        function sendEngagementData(timeSpent) {
+            fetch("log_engagement.php", { // METROLOGY: Sending engagement data to be logged
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ timeSpent: timeSpent }) // Store engagement time in a database
+            }).catch(error => console.log("Error logging data:", error));
+        }
+
+        // METROLOGY CONCEPT: Measuring Response Time of Form Submission
+        document.querySelector("form").addEventListener("submit", function(event) {
+            let formStartTime = Date.now(); // Capture start time of form submission
+            fetch("process_assessment.php", { method: "POST" }) // Send data to the backend
+                .then(response => response.text())
+                .then(data => {
+                    let responseTime = (Date.now() - formStartTime) / 1000; // Calculate time taken for response
+                    document.getElementById("response-time").innerText = 
+                        "Response time: " + responseTime + " seconds"; // Display system performance metric
+                    console.log("Response Time:", responseTime);
+                })
+                .catch(error => console.log("Error:", error));
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Mental Health Assessment</h1>
-        <p>Answer the following questions honestly to assess your mental well-being.</p>
-        
-        <form id="assessmentForm" action="process_assessment.php" method="POST">
-            <label>1. Do you often feel anxious or worried?</label>
-            <select name="q1" required>
-                <option value="">Select</option>
-                <option value="5">Very Often</option>
-                <option value="4">Often</option>
-                <option value="3">Sometimes</option>
-                <option value="2">Rarely</option>
-                <option value="1">Never</option>
-            </select>
-            
-            <label>2. Do you have trouble sleeping or experience frequent nightmares?</label>
-            <select name="q2" required>
-                <option value="">Select</option>
-                <option value="5">Very Often</option>
-                <option value="4">Often</option>
-                <option value="3">Sometimes</option>
-                <option value="2">Rarely</option>
-                <option value="1">Never</option>
-            </select>
+    <h1>Mental Health Assessment</h1>
+    <p>Take our comprehensive assessment to understand your mental well-being better.</p>
 
-            <label>3. Do you feel overwhelmed with daily tasks?</label>
-            <select name="q3" required>
-                <option value="">Select</option>
-                <option value="5">Very Often</option>
-                <option value="4">Often</option>
-                <option value="3">Sometimes</option>
-                <option value="2">Rarely</option>
-                <option value="1">Never</option>
-            </select>
+    <form action="process_assessment.php" method="POST">
+        <label>How often do you feel stressed?</label><br>
+        <select name="stress_level">
+            <option value="1">Rarely</option>
+            <option value="2">Sometimes</option>
+            <option value="3">Often</option>
+            <option value="4">Always</option>
+        </select>
+        <br><br>
 
-            <button type="button" onclick="calculateScore()">Calculate Score</button>
-            <p id="resultMessage"></p>
-            <input type="hidden" name="score" id="finalScore" value="">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <label>How well do you sleep?</label><br>
+        <select name="sleep_quality">
+            <option value="1">Very well</option>
+            <option value="2">Moderate</option>
+            <option value="3">Poor</option>
+        </select>
+        <br><br>
+
+        <label>How often do you engage in relaxing activities?</label><br>
+        <select name="relaxation">
+            <option value="1">Daily</option>
+            <option value="2">A few times a week</option>
+            <option value="3">Rarely</option>
+            <option value="4">Never</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Submit Assessment">
+    </form>
+
+    <p id="response-time"></p>
 </body>
-
 </html>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #E2F1E7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    .container {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    label, select, button {
-        display: block;
-        margin-top: 10px;
-    }
-    button {
-        background-color: #387478;
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #243642;
-    }
-</style>
-
-<script>
-function calculateScore() {
-    let q1 = parseInt(document.querySelector('[name="q1"]').value) || 0;
-    let q2 = parseInt(document.querySelector('[name="q2"]').value) || 0;
-    let q3 = parseInt(document.querySelector('[name="q3"]').value) || 0;
-    
-    let totalScore = q1 + q2 + q3;
-    document.getElementById('finalScore').value = totalScore;
-    
-    let resultMessage = "";
-    // Calculating Cyclomatic Complexity in Mental Health Assessment
-function assessMentalHealth($score) {
-    $result = "";
-
-    if ($score >= 90) {
-        $result = "Severe Depression";
-    } elseif ($score >= 70) {
-        $result = "Moderate Depression";
-    } elseif ($score >= 50) {
-        $result = "Mild Depression";
-    } elseif ($score >= 30) {
-        $result = "Borderline Case";
-    } elseif ($score >= 10) {
-        $result = "Minimal Depression";
-    } else {
-        $result = "No Depression Detected";
-    }
-
-    return $result;
-}
-
-</script>
-
-</html/>

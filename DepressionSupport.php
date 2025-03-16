@@ -6,7 +6,20 @@
     <title>Depression Support Forum</title>
 </head>
 <body>
-    <h1>Depression Support Forum</h1>
+<h1>Depression Support Forum</h1>
+    <div style="margin: 20px;">
+        <p>Was this post helpful?</p>
+        <input type="radio" id="helpful1" name="helpful" value="1">
+        <label for="helpful1">1 - Not Helpful</label><br>
+        <input type="radio" id="helpful2" name="helpful" value="2">
+        <label for="helpful2">2 - Slightly Helpful</label><br>
+        <input type="radio" id="helpful3" name="helpful" value="3">
+        <label for="helpful3">3 - Helpful</label><br>
+        <input type="radio" id="helpful4" name="helpful" value="4">
+        <label for="helpful4">4 - Very Helpful</label><br>
+        <input type="radio" id="helpful5" name="helpful" value="5">
+        <label for="helpful5">5 - Extremely Helpful</label><br>
+    </div> 
     <div>
         <h2>Recent Discussions</h2>
         <div>
@@ -23,4 +36,8 @@
         </div>
     </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 12b16144333c69421ee3e1db8dca4f3701122a5d

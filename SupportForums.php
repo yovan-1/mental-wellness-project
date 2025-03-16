@@ -103,7 +103,10 @@
         <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 30px; color: #2E7D32; text-transform: uppercase;">Support Community Forums</h2>
 
         <!-- Forum Categories Grid -->
+<<<<<<< HEAD
+=======
          
+>>>>>>> 12b16144333c69421ee3e1db8dca4f3701122a5d
         <!-- 3-column grid showing different support categories -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px;">
             <!-- Individual forum category cards -->

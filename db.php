@@ -1,21 +1,26 @@
 <?php
-$servername = "groupnine-database.c1ymcim2gqjk.eu-north-1.rds.amazonaws.com";  // RDS endpoint
-$username = "admin";  // RDS username
-$password = "group_9123";  // RDS password
-$dbname = "groupnine-database";  // The database name you created
+// Database connection details (choose the appropriate one)
+$servername = "localhost";  // Change to your local server or RDS endpoint
+$username = "root";         // Change if needed
+$password = "";             // Change if needed
+$dbname = "stress_management"; // Local database
 
-// Create connection
+// For RDS:
+$servername_rds = "groupnine-database.c1ymcim2gqjk.eu-north-1.rds.amazonaws.com"; // RDS endpoint
+$username_rds = "admin";    // RDS username
+$password_rds = "group_9123"; // RDS password
+$dbname_rds = "groupnine-database"; // RDS database name
+
+// Choose the appropriate connection based on your environment
 $conn = new mysqli($servername, $username, $password, $dbname);
+// Or use RDS connection
+// $conn = new mysqli($servername_rds, $username_rds, $password_rds, $dbname_rds);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
-?>
 
-
-<?php
 // Structural Measurement: Log Query Execution Time
 function executeQueryWithLogging($conn, $query) {
     $startTime = microtime(true);
@@ -28,6 +33,6 @@ function executeQueryWithLogging($conn, $query) {
     return $result;
 }
 
-// Example Usage:
+// Example Usage of logging query time
 executeQueryWithLogging($conn, "SELECT * FROM users");
 ?>
