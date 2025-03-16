@@ -100,6 +100,20 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 </div>
                 
                 <button type="submit">Set Goal ✨</button>
+<<<<<<< HEAD
+=======
+                <div style="margin: 20px;">
+    <label for="goal">Set a Mental Health Goal:</label><br>
+    <input type="text" id="goal" name="goal" placeholder="e.g., Reduce stress" required><br>
+    <label for="timeline">Timeline:</label><br>
+    <select id="timeline" name="timeline" required>
+        <option value="1_week">1 Week</option>
+        <option value="1_month">1 Month</option>
+        <option value="3_months">3 Months</option>
+    </select><br>
+    <button type="submit">Set Goal</button>
+</div>
+>>>>>>> 12b16144333c69421ee3e1db8dca4f3701122a5d
             </form>
         </div>
 

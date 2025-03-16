@@ -105,7 +105,7 @@
     <!-- Contains contact information and copyright notice -->
     <footer style="text-align: center; padding: 20px; background-color: rgba(255, 255, 255, 0.95); margin-top: 40px;">
         <p style="color: #666;">For any questions, please contact Dr. Gift Martha at Giftmartha47@gmail.com</p>
-        <p style="color: #666;">© 2025 Mental Health Support. All rights reserved.</p>
+        <p style="color: #666;">© 2024 Mental Health Support. All rights reserved.</p>
     </footer>
 
 </body>

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<?php
+// Start the session
+session_start();
+?>
+
+>>>>>>> 12b16144333c69421ee3e1db8dca4f3701122a5d
 <!DOCTYPE html>
 <html lang="en">
 <head>
