@@ -37,9 +37,43 @@ Only valid inputs are processed, reducing invalid login attempts.
 This prevents users from submitting partial or incorrect data.
  Enhances Security
 
+
+Cyclomatic Complexity Calculation in Mental Health Assessment
+
+Overview
+This module calculates Cyclomatic Complexity by measuring the number of independent paths through a function. The assessMentalHealth() function evaluates a user's mental health score and categorizes the result based on predefined thresholds.
 Helps prevent accidental form submissions with missing fields.
 Can be extended with stronger validation (e.g., regex for email format, password strength checks).
  Benefits of Measurement Validation in Authentication
  Improves user experience by providing instant feedback.
  Reduces server errors by catching invalid inputs before submission.
  Enhances security by ensuring structured and complete login credentials.
+
+
+Added a code for measurement validation in the tools.php page.
+Description
+This code provides a simple HTML form where users can input their stress level on a scale of 1 to 10. It includes basic form validation using JavaScript to ensure users enter a valid number within the specified range.
+
+How It Works
+The form displays a label and an input field where users can enter their stress level.
+The input field is restricted to values between 1 and 10 using the min and max attributes.
+When the user clicks the Submit button:
+A JavaScript function checks whether the entered value is within the allowed range.
+If the value is invalid, an alert message prompts the user to correct it, and the form submission is prevented.
+
+
+
+Software Structural Measurement
+
+This measures complexity in control-flow, data flow, and data structure.
+
+In the code of db.php file i implemented the structural measurement using  a function called `executeQueryWithLogging` that does the following,
+
+1. Measures the execution time of SQL queries made to the database.
+2. Logs the execution time using the `error_log` function.
+
+In our Mental Health and Wellness Project this code i have implemented does the folkowing changes,
+
+1. Monitoring database performance: By logging query execution times, you can identify slow-running queries that may impact user experience.
+2. Optimizing database queries:This is achieved by analyzing logged execution times, you can optimize database queries to improve response times and overall application performance.
+3. Ensuring data-driven insights: By optimizing database query performance, you can ensure that your application provides accurate and timely insights to support mental health and wellness.

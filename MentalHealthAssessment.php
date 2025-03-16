@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-=======
 <?php
 // Start the session
 session_start();
 ?>
-
->>>>>>> 12b16144333c69421ee3e1db8dca4f3701122a5d
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +28,27 @@ session_start();
                 body: JSON.stringify({ timeSpent: timeSpent }) // Store engagement time in a database
             }).catch(error => console.log("Error logging data:", error));
         }
+
+        // METROLOGY CONCEPT: Measuring Response Time of Form Submission
+        document.querySelector("form").addEventListener("submit", function(event) {
+            let formStartTime = Date.now(); // Capture start time of form submission
+            fetch("process_assessment.php", { method: "POST" }) // Send data to the backend
+                .then(response => response.text())
+                .then(data => {
+                    let responseTime = (Date.now() - formStartTime) / 1000; // Calculate time taken for response
+                    document.getElementById("response-time").innerText = 
+                        "Response time: " + responseTime + " seconds"; // Display system performance metric
+                    console.log("Response Time:", responseTime);
+                })
+                .catch(error => console.log("Error:", error));
+        });
     </script>
 </head>
 <body>
     <h1>Mental Health Assessment</h1>
     <p>Take our comprehensive assessment to understand your mental well-being better.</p>
 
-    <!-- METROLOGY CONCEPT: Measuring Mental Well-being Through User Responses -->
     <form action="process_assessment.php" method="POST">
-        <!-- METROLOGY: Collecting Data for Statistical Analysis -->
         <label>How often do you feel stressed?</label><br>
         <select name="stress_level">
             <option value="1">Rarely</option>
@@ -70,24 +78,6 @@ session_start();
         <input type="submit" value="Submit Assessment">
     </form>
 
-    <!-- METROLOGY CONCEPT: Measuring System Performance -->
     <p id="response-time"></p>
-
-    <script>
-        // METROLOGY CONCEPT: Measuring Response Time of Form Submission
-        document.querySelector("form").addEventListener("submit", function(event) {
-            let formStartTime = Date.now(); // Capture start time of form submission
-
-            fetch("process_assessment.php", { method: "POST" }) // Send data to the backend
-                .then(response => response.text())
-                .then(data => {
-                    let responseTime = (Date.now() - formStartTime) / 1000; // Calculate time taken for response
-                    document.getElementById("response-time").innerText = 
-                        "Response time: " + responseTime + " seconds"; // Display system performance metric
-                    console.log("Response Time:", responseTime);
-                })
-                .catch(error => console.log("Error:", error));
-        });
-    </script>
 </body>
 </html>
