@@ -104,7 +104,7 @@ description for the signup with logging feature added to the sign up page
 
 This function models a Control Flow Graph (CFG) by logging each step in the signup validation process. It helps track the flow of execution, ensuring that all possible paths (valid and invalid inputs) are accounted for.
 
-Why is this important?
+The importance of this
 
 Models program logic visually: Each decision point (if conditions) creates a new path in the flow graph.
 Enhances debugging: Logs errors like invalid email format and mismatched passwords.
