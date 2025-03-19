@@ -101,4 +101,23 @@ Our system includes features such as user profiles, therapist interactions, self
 
 • Fetching a specific user (for personalized recommendations, tracking user progress, and support interactions).
 
+description for the signup with logging feature added to the sign up page
 
+This function models a Control Flow Graph (CFG) by logging each step in the signup validation process. It helps track the flow of execution, ensuring that all possible paths (valid and invalid inputs) are accounted for.
+
+Why is this important?
+
+Models program logic visually: Each decision point (if conditions) creates a new path in the flow graph.
+Enhances debugging: Logs errors like invalid email format and mismatched passwords.
+Improves maintainability: Developers can analyze the flow of validation logic without manually testing all cases.
+
+How it works:
+
+1. Logs when validation starts
+
+2. Checks if the email is valid
+
+3. Checks if the passwords match
+
+4. Logs success if validation passes
+This helps track control flow complexity and ensures better software structural measurement in the project.
