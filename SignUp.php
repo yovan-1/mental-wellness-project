@@ -11,6 +11,43 @@
         <p style="text-align: center; color: #666; margin-bottom: 25px;">Join our supportive community today</p>
         
         <form action="Sign_proccess.php" method="POST" id="signupForm">
+            <?php
+
+// CFG Representation: Logging Validation Flow
+
+function validateSignup($email, $password, $confirmPassword) {
+
+    error_log("Starting signup validation...");
+
+
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+        error_log("Invalid email format");
+
+        return "Invalid email format.";
+
+    }
+
+    
+
+    if ($password !== $confirmPassword) {
+
+        error_log("Passwords do not match");
+
+        return "Passwords do not match.";
+
+    }
+
+
+
+    error_log("Signup validation successful!");
+
+    return "Validation passed.";
+
+}
+
+?>
             <div style="margin-bottom: 20px;">
                 <label for="name" style="color: #2E7D32; font-weight: 600;">Full Name</label>
                 <input type="text" id="name" name="full_name" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: all 0.3s; margin-top: 5px;" placeholder="Enter your full name">
