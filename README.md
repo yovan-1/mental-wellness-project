@@ -1,6 +1,5 @@
 This is our read me file.
 
-
 Explanation to the code i added for QGM in the GoalSetting.php
  Concept: Goal-Question-Metric (GQM) Approach
 The Goal-Question-Metric (GQM) model is used to define, evaluate, and measure the effectiveness of mental health goals within the Mental Wellness Monitoring and Self-Care Recommendation System.
