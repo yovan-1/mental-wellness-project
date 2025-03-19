@@ -20,7 +20,28 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
+<?php
 
+// High Cohesion - Separate Database Functions
+
+function getAllUsers($conn) {
+
+    return $conn->query("SELECT * FROM users");
+
+}
+function getUserById($conn, $userId) {
+
+    $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+
+    $stmt->bind_param("i", $userId);
+
+    $stmt->execute();
+
+    return $stmt->get_result()->fetch_assoc();
+
+}
+
+?>
 // Structural Measurement: Log Query Execution Time
 function executeQueryWithLogging($conn, $query) {
     $startTime = microtime(true);
