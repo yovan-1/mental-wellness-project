@@ -77,3 +77,28 @@ In our Mental Health and Wellness Project this code i have implemented does the 
 1. Monitoring database performance: By logging query execution times, you can identify slow-running queries that may impact user experience.
 2. Optimizing database queries:This is achieved by analyzing logged execution times, you can optimize database queries to improve response times and overall application performance.
 3. Ensuring data-driven insights: By optimizing database query performance, you can ensure that your application provides accurate and timely insights to support mental health and wellness.
+
+   DETAILS TO THE COHESION CODE I ADDED IN THE db file
+   High Cohesion in Database Operations
+In the Mental Wellness Monitoring and Self-Care Recommendation System, maintaining a well-structured and modular codebase is essential for scalability, maintainability, and readability. To achieve this, we apply the High Cohesion principle in our database operations, ensuring that each function performs a single, well-defined task.
+
+Why This Matters?
+
+1. Clear Function Responsibilities – Each function focuses on a specific task, reducing complexity and making the code easier to understand.
+
+2. Code Reusability – Instead of writing the same queries in multiple places, these functions can be reused throughout the system, improving efficiency.
+
+3. Easier Debugging and Maintenance – Changes to data retrieval logic (e.g., adding filters or modifying queries) can be done in one place, minimizing errors.
+
+4. Better Scalability – As the system grows, adding more database-related functions (e.g., searching users, filtering by role) is straightforward without disrupting existing code.
+
+
+
+Relevance to Our System
+Our system includes features such as user profiles, therapist interactions, self-care tracking, and community discussions. These functions help in:
+
+• Retrieving all users (for admin dashboards, therapist management, and community engagement).
+
+• Fetching a specific user (for personalized recommendations, tracking user progress, and support interactions).
+
+
