@@ -2,6 +2,15 @@
 // Start a new or resume existing session to maintain user state
 session_start();
 
+// Lower Coupling - API Wrapper for File Uploads
+function uploadFileToDB($fileName, $filePath, $conn) {
+    $stmt = $conn->prepare("INSERT INTO files (name, path) VALUES (?, ?)");
+    $stmt->bind_param("ss", $fileName, $filePath);
+    return $stmt->execute();
+}
+
+// Usage Example:
+$fileSaved = uploadFileToDB($fileName, $filePath, $conn);
 // Check if user is logged in by verifying session variable
 // If not logged in, redirect to login page and stop execution
 if (!isset($_SESSION['user_id'])) {
