@@ -146,7 +146,8 @@ $fileSaved becomes true if it worked, or false if it didn’t.
 You can then check it to see if you need to show an error message or success message.
 
 Visually, your database table files will now have a new row like: | id | name        | path                 | |----|-------------|----------------------| | 1  | profile.png | /uploads/profile.png  |
-finally 
+
+Finally 
 
 > It saves the file's name and path into your database automatically whenever you upload a file, and tells you if it succeeded or not.
 
