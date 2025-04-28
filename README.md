@@ -120,3 +120,33 @@ How it works:
 
 4. Logs success if validation passes
 This helps track control flow complexity and ensures better software structural measurement in the project.
+Alright — when you implement that function in your code, here’s exactly what happens:
+
+1. You call uploadFileToDB($fileName, $filePath, $conn) somewhere in your PHP script.
+
+2. PHP runs the uploadFileToDB function:
+
+It takes the filename (like profile.png), the filepath (like /uploads/profile.png), and the database connection ($conn) you gave it.
+
+3. Inside the function:
+
+It prepares an SQL command that inserts this information into your database safely (using a prepared statement to prevent SQL injection).
+
+4. It binds the actual values of $fileName and $filePath to the SQL.
+
+5. It executes the SQL command:
+
+If successful: it adds a new row in your files table — with the file name and file path.
+
+If it fails: nothing is added, and it returns false.
+6. You get a result:
+
+$fileSaved becomes true if it worked, or false if it didn’t.
+
+You can then check it to see if you need to show an error message or success message.
+
+Visually, your database table files will now have a new row like: | id | name        | path                 | |----|-------------|----------------------| | 1  | profile.png | /uploads/profile.png  |
+finally 
+
+> It saves the file's name and path into your database automatically whenever you upload a file, and tells you if it succeeded or not.
+
